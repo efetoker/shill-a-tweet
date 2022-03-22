@@ -8,12 +8,12 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(public serv: AppService) {
+  constructor() {
     
 
   }
 
   ngOnInit(): void {
-    this.serv.auth();
+    
   }
 }
