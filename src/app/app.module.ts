@@ -6,13 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { BaseComponent } from './base/base.component';
-import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BaseComponent,
-    CallbackComponent
+    BaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://api.twitter.com/",
+      "target": "http://twitter-authenticator.com/",
       "secure": false,
       "pathRewrite": {
         "^/api": ""

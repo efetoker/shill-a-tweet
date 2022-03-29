@@ -9,4 +9,8 @@ export class AppService {
   constructor(private http: HttpClient) { 
     
   }
+
+  getAccounts() {
+    return this.http.get('/api/accounts');
+  }
 }
