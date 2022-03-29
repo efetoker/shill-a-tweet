@@ -11,9 +11,15 @@
                     Twitter App
                 </div>
 
-                <button class="mt-8" (click)="signIn()">
-                    <img src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/auth-docs/sign-in-with-twitter-link.png.twimg.2560.png">
-                </button>
+                <div class="w-full flex justify-between items-center mt-8">
+                    <button (click)="signIn()">
+                        <img src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/auth-docs/sign-in-with-twitter-link.png.twimg.2560.png">
+                    </button>
+
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Shill
+                    </button>
+                </div>
               </div>
         </div>
         <div class="lg:w-3/12 sm:w-full" *ngIf="loading">
