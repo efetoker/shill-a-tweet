@@ -11,10 +11,10 @@ export class AppService {
   }
 
   getAccounts() {
-    return this.http.get('/api/accounts');
+    return this.http.get('https://twitter-authenticator.herokuapp.com/api/accounts');
   }
 
   deleteAccount(account: any) {
-    return this.http.delete('/api/account/' + account.id);
+    return this.http.delete('https://twitter-authenticator.herokuapp.com/api/account/' + account.id);
   }
 }
