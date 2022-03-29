@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://twitter-authenticator.com/",
+      "target": "http://twitter-authenticator.herokuapp.com/",
       "secure": false,
       "pathRewrite": {
         "^/api": ""

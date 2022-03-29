@@ -13,4 +13,8 @@ export class AppService {
   getAccounts() {
     return this.http.get('/api/accounts');
   }
+
+  deleteAccount(account: any) {
+    return this.http.delete('/api/account/' + account.id);
+  }
 }

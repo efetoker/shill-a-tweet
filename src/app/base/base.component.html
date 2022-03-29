@@ -1,44 +1,30 @@
-<!--
-  Welcome to Tailwind Play, the official Tailwind CSS playground!
+<div class="flex justify-center items-center w-screen h-screen max-h-screen bg-gray-100">
 
-  Everything here works just like it does when you're running Tailwind locally
-  with a real build pipeline. You can customize your config file, use features
-  like `@apply`, or even add third-party plugins.
+    <div class="xl:w-3/5 lg:w-4/5 py-16 sm:w-full min-h-full max-h-full sm:justify-start lg:justify-around sm:items-start lg:items-center flex lg:flex-row sm:flex-col">
+        <div class="rounded overflow-hidden bg-white shadow-lg lg:w-8/12 sm:w-full sm:mb-8 lg:mb-0">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-4">
+                    <a class="inline-block align-baseline font-bold text-blue-500 hover:text-blue-600" href="#">
+                        shill-a-tweet
+                    </a>
+                    
+                    Twitter App
+                </div>
 
-  Feel free to play with this example if you're just learning, or trash it and
-  start from scratch if you know enough to be dangerous. Have fun!
--->
-<div class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
-    <img src="/img/beams.jpg" alt="" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-none" width="1308" />
-    <div class="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-    <div style="min-width: 600px" class="relative px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10">
-        <div class="max-w-md mx-auto" *ngIf="!loading">
-            <p class="mb-4">Bağlı hesaplar:</p>
-
-            <ul class="mb-4">
-                <li class="text-sm" *ngFor="let account of accounts; let i = index">
-                    {{account.username}}
-                </li>
-            </ul>
-
-            <hr class="mb-4" />
-
-            <button (click)="signIn()"><img src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/auth-docs/sign-in-with-twitter-gray.png.twimg.1920.png"></button>
+                <button class="mt-8" (click)="signIn()">
+                    <img src="https://cdn.cms-twdigitalassets.com/content/dam/developer-twitter/auth-docs/sign-in-with-twitter-link.png.twimg.2560.png">
+                </button>
+              </div>
         </div>
+        <div class="lg:w-3/12 sm:w-full">
+            <div class="rounded py-2 px-4 overflow-hidden bg-white shadow-lg w-full flex flex-row justify-between items-center" *ngFor="let account of accounts; let i = index">
+                <span class="font-semibold subpixel-antialiased text-md drop-shadow-xl">{{account.username}}</span>
 
-        <div class="animate-pulse flex space-x-4 max-w-md mx-auto" *ngIf="loading">
-            <div class="rounded-full bg-slate-700 h-10 w-10"></div>
-            <div class="flex-1 space-y-6 py-1">
-                <div class="h-2 bg-slate-700 rounded"></div>
-                <div class="space-y-3">
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                    <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                </div>
-                <div class="h-2 bg-slate-700 rounded"></div>
-                </div>
+                <svg (click)="deleteAccount(account)" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-400 hover:cursor-pointer hover:scale-125 transform transition transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
             </div>
         </div>
     </div>
+
 </div>
-  
