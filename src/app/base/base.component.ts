@@ -20,7 +20,21 @@ export class BaseComponent implements OnInit {
   getAccounts(){
     this.service.getAccounts().subscribe((e: any) => {
       if(e.response.status){
-        this.accounts = e.data;
+        this.accounts = e.data.map((e: any) => {
+          let obj = {
+            oauth_token: e.oauth_token,
+            oauth_token_secret: e.oauth_token_secret,
+            username: e.username,
+            id: e.id,
+            tweet: null,
+            image: e.image,
+            active: true
+          };
+
+          console.log(obj);
+
+          return obj;
+        });
 
         localStorage.setItem('accounts', JSON.stringify(this.accounts));
       }
