@@ -21,6 +21,8 @@ export class BaseComponent implements OnInit {
     this.service.getAccounts().subscribe((e: any) => {
       if(e.response.status){
         this.accounts = e.data;
+
+        localStorage.setItem('accounts', JSON.stringify(this.accounts));
       }
 
       this.loading = false;
@@ -41,5 +43,9 @@ export class BaseComponent implements OnInit {
         }
       });
     }
+  }
+
+  goToProfile(account: any){
+    window.open('https://twitter.com/'+ account.username, '_blank');
   }
 }
