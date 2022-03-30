@@ -40,8 +40,8 @@ export class AppService {
     return this.http.post('https://twitter-authenticator.herokuapp.com/retweet/' + id, account);
   }
 
-  replyTweet(id: string, account: any, text: string) {
+  replyTweet(id: string, account: any) {
     console.log("Request made: " + 'https://twitter-authenticator.herokuapp.com/reply/' + id);
-    return this.http.post('https://twitter-authenticator.herokuapp.com/reply/' + id, {account: account, text: text});
+    return this.http.post('https://twitter-authenticator.herokuapp.com/reply/' + id, account);
   }
 }
