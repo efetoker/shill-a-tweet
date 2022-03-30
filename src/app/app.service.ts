@@ -11,18 +11,18 @@ export class AppService {
   }
 
   getAccounts() {
-    console.log("Request made: " + "https://twitter-authenticator.herokuapp.com/accounts");
-    return this.http.get('https://twitter-authenticator.herokuapp.com/accounts');
+    console.log("Request made: " + "https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/accounts");
+    return this.http.get('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/accounts');
   }
 
   deleteAccount(account: any) {
-    console.log("Request made: " + "https://twitter-authenticator.herokuapp.com/delete-account" + account.id);
-    return this.http.delete('https://twitter-authenticator.herokuapp.com/account/' + account.id);
+    console.log("Request made: " + "https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/delete-account" + account.id);
+    return this.http.delete('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/account/' + account.id);
   }
 
   getTweet(id: string, account: any) {
-    console.log("Request made: " + 'https://twitter-authenticator.herokuapp.com/tweet/' + id + '/' + account.oauth_token + '/' + account.oauth_token_secret);
-    return this.http.get('https://twitter-authenticator.herokuapp.com/tweet/' + id + '/' + account.oauth_token + '/' + account.oauth_token_secret);
+    console.log("Request made: " + 'https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/tweet/' + id + '/' + account.oauth_token + '/' + account.oauth_token_secret);
+    return this.http.get('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/tweet/' + id + '/' + account.oauth_token + '/' + account.oauth_token_secret);
   }
 
   getOEmbed(url: string) {
@@ -31,17 +31,17 @@ export class AppService {
   }
 
   likeTweet(id: string, account: any) {
-    console.log("Request made: " + 'https://twitter-authenticator.herokuapp.com/like/' + id, account);
-    return this.http.post('https://twitter-authenticator.herokuapp.com/like/' + id, account);
+    console.log("Request made: " + 'https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/like/' + id, account);
+    return this.http.post('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/like/' + id, account);
   }
 
   retweetTweet(id: string, account: any) {
-    console.log("Request made: " + 'https://twitter-authenticator.herokuapp.com/retweet/' + id, account);
-    return this.http.post('https://twitter-authenticator.herokuapp.com/retweet/' + id, account);
+    console.log("Request made: " + 'https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/retweet/' + id, account);
+    return this.http.post('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/retweet/' + id, account);
   }
 
   replyTweet(id: string, account: any) {
-    console.log("Request made: " + 'https://twitter-authenticator.herokuapp.com/reply/' + id);
-    return this.http.post('https://twitter-authenticator.herokuapp.com/reply/' + id, account);
+    console.log("Request made: " + 'https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/reply/' + id);
+    return this.http.post('https://cors-anywhere-for-twitter.herokuapp.com/https://twitter-authenticator.herokuapp.com/reply/' + id, account);
   }
 }
