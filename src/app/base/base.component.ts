@@ -17,6 +17,14 @@ export class BaseComponent implements OnInit {
     this.getAccounts();
   }
 
+  signIn(){
+    window.location.href = 'https://twitter-authenticator.herokuapp.com/start-auth';
+  }
+
+  goToProfile(account: any){
+    window.open('https://twitter.com/'+ account.username, '_blank');
+  }
+
   getAccounts(){
     this.service.getAccounts().subscribe((e: any) => {
       if(e.response.status){
@@ -31,8 +39,6 @@ export class BaseComponent implements OnInit {
             active: true
           };
 
-          console.log(obj);
-
           return obj;
         });
 
@@ -41,10 +47,6 @@ export class BaseComponent implements OnInit {
 
       this.loading = false;
     });
-  }
-
-  signIn(){
-    window.location.href = 'https://twitter-authenticator.herokuapp.com/start-auth';
   }
 
   deleteAccount(account: any){
@@ -57,9 +59,5 @@ export class BaseComponent implements OnInit {
         }
       });
     }
-  }
-
-  goToProfile(account: any){
-    window.open('https://twitter.com/'+ account.username, '_blank');
   }
 }

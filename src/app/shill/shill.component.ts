@@ -36,7 +36,21 @@ export class ShillComponent implements OnInit {
     this.accounts = JSON.parse(localStorage.getItem('accounts') || '{}').map((e: any) => {e.id == event || event == 0 ? e.active = true : e.active = false; return e;});
   }
 
-  test(){
+  reset(){
+    this.loading = true;
+    this.tweet_id = null;
+    this.tweet_url = '';
+
+    this.processes = [];
+    
+    this.accounts = JSON.parse(localStorage.getItem('accounts') || '{}');
+
+    setTimeout(() => {
+      this.loading = false;
+    }, 350);
+  }
+
+  tweetInserted(){
     this.loading = true;
 
     if(Number(this.tweet_url.split('/')[5])){
@@ -59,8 +73,8 @@ export class ShillComponent implements OnInit {
       this.loading = false;
     }
   }
-
-  async done(){
+  
+  selectionsDone(){
     if(this.reply && this.accounts.filter(e => e.tweet != null).length == 0){
       alert('Please fill in all fields.');
     }else{
@@ -128,19 +142,4 @@ export class ShillComponent implements OnInit {
       });
     }
   }
-
-  reset(){
-    this.loading = true;
-    this.tweet_id = null;
-    this.tweet_url = '';
-
-    this.processes = [];
-    
-    this.accounts = JSON.parse(localStorage.getItem('accounts') || '{}');
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 350);
-  }
-
 }
